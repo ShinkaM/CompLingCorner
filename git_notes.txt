@@ -1,0 +1,11 @@
+Repository (CompLingCorner from github)
+
+Clone repository (copy CompLingCorner to local computer)
+
+Add new files to a box with (git add)
+
+Seal and annotate box (git commit)
+
+Send sealed box to github (git push)
+
+Get current repository (git pull)
