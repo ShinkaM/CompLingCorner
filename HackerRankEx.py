@@ -1,4 +1,4 @@
-#Author: Nick Bellizi
+# Author: Shinka Mori
 from array import *
 import sys
 
