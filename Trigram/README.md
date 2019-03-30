@@ -1,0 +1,1 @@
+This is our approach to the hacker rank problem The Trigram: https://www.hackerrank.com/challenges/the-trigram/problem
