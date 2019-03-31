@@ -3,6 +3,7 @@ from array import *
 import sys
 from  collections import defaultdict
 
+
 '''
 sets up the initial dict of acronyms, used to keep track of the order & completion of the expanded acronym list. tag unexpaned acronym with <UNK>
 '''
@@ -37,19 +38,21 @@ def acro_expander(text, acronym, dict):
 #                print(acro[char])
                 is_skip = False
                 for s in skip:
-                    if is_acro and word == s:
+                    if word == s and is_acro:
                         expanded += s + " "
+                     
                         continue
                     if acro[char] == word[0] and len(word) > 1 and word != acro:
                         is_acro = True
                         expanded += word + " "
-                    else :
+                        if char == len(acro)-1 and is_acro and dict[acro] == '<UNK>':
+                        
+                            dict[acro] = expanded
+                            print(dict[acro])
+                            break
+                    else:
                         is_acro = False
 
-                if char == len(acro)-1 and is_acro and dict[acro] == '<UNK>':
-                    dict[acro] = expanded
-                    print(dict[acro])
-                    break
     return dict
                 
                 
@@ -90,6 +93,7 @@ f.close()
 num = int(data[0])
 #print(num)
 
+text_set -=
 text = "".join(data[1: len(data)-num]).split()#gets the text, split it by line
 acronym = "".join(data[len(data)-num: len(data)]).splitlines()#gets the acronyms. splits it by line
 dict = data_prep(acronym)
